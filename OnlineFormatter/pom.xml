@@ -1,449 +1,370 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.online.formatter</groupId>
 	<artifactId>OnlineFormatter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>net.sf.barcode4j</groupId>
+			<artifactId>barcode4j</artifactId>
+			<version>2.1</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>apache-bsf</groupId>
+			<artifactId>bsf</artifactId>
+			<version>2.4.0</version>
+		</dependency> -->
+		<dependency>
+			<groupId>bsh</groupId>
+			<artifactId>bsh</artifactId>
+			<version>2.0b4</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<version>2.0.SP1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml</groupId>
+			<artifactId>classmate</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils-bean-collections</artifactId>
+			<version>1.8.3</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.11</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+			<version>3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.servlets</groupId>
+			<artifactId>cos</artifactId>
+			<version>09May2002</version>
+		</dependency>
+		<dependency>
+			<groupId>com.couchbase.client</groupId>
+			<artifactId>couchbase-client</artifactId>
+			<version>1.4.13</version>
+		</dependency>
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>el-api</artifactId>
+			<version>2.2.1-b04</version>
+		</dependency>
+		<dependency>
+			<groupId>org.owasp.esapi</groupId>
+			<artifactId>esapi</artifactId>
+			<version>2.1.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-jta_1.1_spec</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.common</groupId>
+			<artifactId>hibernate-commons-annotations</artifactId>
+			<version>5.1.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.4.0.CR2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<version>1.0.2.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+			<version>4.4.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore-nio</artifactId>
+			<version>4.4.10</version>
+		</dependency>
+		<dependency>
+			<groupId>itext</groupId>
+			<artifactId>itext</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sourceforge.jadex</groupId>
+			<artifactId>jadex-xml</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.24.0-GA</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jdom</groupId>
+			<artifactId>jaxen-core</artifactId>
+			<version>1.0-FCS</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jdom</groupId>
+			<artifactId>jaxen-jdom</artifactId>
+			<version>1.0-FCS</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.spec.javax.interceptor</groupId>
+			<artifactId>jboss-interceptors-api_1.1_spec</artifactId>
+			<version>1.0.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.logging</groupId>
+			<artifactId>jboss-logging</artifactId>
+			<version>3.3.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jfree</groupId>
+			<artifactId>jcommon</artifactId>
+			<version>1.0.24</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jdom</groupId>
+			<artifactId>jdom</artifactId>
+			<version>2.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>net.htmlparser.jericho</groupId>
+			<artifactId>jericho-html</artifactId>
+			<version>3.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jettison</groupId>
+			<artifactId>jettison</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jfree</groupId>
+			<artifactId>jfreechart</artifactId>
+			<version>1.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.10.1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>jsr250-api</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.jt400</groupId>
+			<artifactId>jt400</artifactId>
+			<version>9.6</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>2.0.2-beta</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty</artifactId>
+			<version>4.0.0.Alpha8</version>
+		</dependency>
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>4.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- <dependency>
+			<groupId>com.sun.pdfview</groupId>
+			<artifactId>pdfrenderer</artifactId>
+			<version>0.9.1-patched</version>
+		</dependency> -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-contrib</artifactId>
+			<version>4.0.0</version>
+		</dependency> -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-scratchpad</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jdom</groupId>
+			<artifactId>saxpath</artifactId>
+			<version>1.0-FCS</version>
+		</dependency>
+		<dependency>
+			<groupId>xalan</groupId>
+			<artifactId>serializer</artifactId>
+			<version>2.7.2</version>
+		</dependency>
+		<dependency>
+			<groupId>net.spy</groupId>
+			<artifactId>spymemcached</artifactId>
+			<version>2.12.3</version>
+		</dependency>
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>2.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.cloudecho</groupId>
+			<artifactId>xmlbean</artifactId>
+			<version>1.5.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.9.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-guava</artifactId>
+			<version>2.9.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-json-org</artifactId>
+			<version>2.9.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.module</groupId>
+			<artifactId>jackson-module-afterburner</artifactId>
+			<version>2.9.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson</groupId>
+			<artifactId>jackson-dataformat-csv</artifactId>
+			<version>0.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-yaml</artifactId>
+			<version>2.9.7</version>
+		</dependency>
+	</dependencies>
+
 	<build>
-		<sourceDirectory>src</sourceDirectory>
+		<!-- <sourceDirectory>src</sourceDirectory> -->
 		<plugins>
+			<!-- <plugin> <artifactId>maven-compiler-plugin</artifactId> <version>3.5</version> 
+				<configuration> <source>1.8</source> <target>1.8</target> </configuration> 
+				</plugin> -->
 			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.5</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
 				<configuration>
+					<warSourceDirectory>WebContent</warSourceDirectory>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
-				<executions>
-					<execution>
-						<id>prepare-war</id>
-						<phase>prepare-package</phase>
-						<configuration>
-							<archiveClasses>false</archiveClasses>
-							<archive>
-								<manifest>
-									<addClasspath>true</addClasspath>
-									<classpathPrefix />
-								</manifest>
-								<manifestEntries>
-									<Implementation-Build>${build.number}</Implementation-Build>
-									<Implementation-Title>${project.name}</Implementation-Title>
-									<Built-By>${user.name}</Built-By>
-									<Built-OS>${os.name}</Built-OS>
-									<Build-Date>${build.date}</Build-Date>
-								</manifestEntries>
-							</archive>
-							<webResources>
-								<resource>
-									<!-- this is relative to the pom.xml directory -->
-									<directory>./target/dist</directory>
-								</resource>
-							</webResources>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-war-plugin</artifactId> 
+				<configuration> <failOnMissingWebXml>false</failOnMissingWebXml> </configuration> 
+				<executions> <execution> <id>prepare-war</id> <phase>prepare-package</phase> 
+				<configuration> <archiveClasses>false</archiveClasses> <archive> <manifest> 
+				<addClasspath>true</addClasspath> <classpathPrefix /> </manifest> <manifestEntries> 
+				<Implementation-Build>${build.number}</Implementation-Build> <Implementation-Title>${project.name}</Implementation-Title> 
+				<Built-By>${user.name}</Built-By> <Built-OS>${os.name}</Built-OS> <Build-Date>${build.date}</Build-Date> 
+				</manifestEntries> </archive> <webResources> <resource> <directory>./target/dist</directory> 
+				</resource> </webResources> </configuration> </execution> </executions> </plugin> -->
 		</plugins>
 	</build>
-	<dependencyManagement>
-		<dependencies>
-			<!-- https://mvnrepository.com/artifact/net.sf.barcode4j/barcode4j -->
-			<dependency>
-				<groupId>net.sf.barcode4j</groupId>
-				<artifactId>barcode4j</artifactId>
-				<version>2.1</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/apache-bsf/bsf -->
-			<dependency>
-				<groupId>apache-bsf</groupId>
-				<artifactId>bsf</artifactId>
-				<version>2.4.0</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/bsh/bsh -->
-			<dependency>
-				<groupId>bsh</groupId>
-				<artifactId>bsh</artifactId>
-				<version>2.0b1</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/javax.enterprise/cdi-api -->
-			<dependency>
-				<groupId>javax.enterprise</groupId>
-				<artifactId>cdi-api</artifactId>
-				<version>2.0</version>
-				<scope>provided</scope>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/com.fasterxml/classmate -->
-			<dependency>
-				<groupId>com.fasterxml</groupId>
-				<artifactId>classmate</artifactId>
-				<version>1.3.4</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils-bean-collections -->
-			<dependency>
-				<groupId>commons-beanutils</groupId>
-				<artifactId>commons-beanutils-bean-collections</artifactId>
-				<version>1.8.3</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
-			<dependency>
-				<groupId>commons-codec</groupId>
-				<artifactId>commons-codec</artifactId>
-				<version>1.10</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/commons-collections/commons-collections -->
-			<dependency>
-				<groupId>commons-collections</groupId>
-				<artifactId>commons-collections</artifactId>
-				<version>3.2.2</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
-			<dependency>
-				<groupId>commons-fileupload</groupId>
-				<artifactId>commons-fileupload</artifactId>
-				<version>1.3.3</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-io -->
-			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-io</artifactId>
-				<version>1.3.2</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
-			<dependency>
-				<groupId>commons-lang</groupId>
-				<artifactId>commons-lang</artifactId>
-				<version>2.6</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
-			<dependency>
-				<groupId>commons-logging</groupId>
-				<artifactId>commons-logging</artifactId>
-				<version>1.2</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
-			<dependency>
-				<groupId>commons-net</groupId>
-				<artifactId>commons-net</artifactId>
-				<version>3.6</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/com.servlets/cos -->
-			<dependency>
-				<groupId>com.servlets</groupId>
-				<artifactId>cos</artifactId>
-				<version>09May2002</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/com.couchbase.client/couchbase-client -->
-			<dependency>
-				<groupId>com.couchbase.client</groupId>
-				<artifactId>couchbase-client</artifactId>
-				<version>2.0.0-dp3</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
-			<dependency>
-				<groupId>dom4j</groupId>
-				<artifactId>dom4j</artifactId>
-				<version>1.6.1</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/javax.el/el-api -->
-			<dependency>
-				<groupId>javax.el</groupId>
-				<artifactId>el-api</artifactId>
-				<version>2.2.1-b04</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.owasp.esapi/esapi -->
-			<dependency>
-				<groupId>org.owasp.esapi</groupId>
-				<artifactId>esapi</artifactId>
-				<version>2.1.0.1</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.apache.geronimo.specs/geronimo-jta_1.1_spec -->
-			<dependency>
-				<groupId>org.apache.geronimo.specs</groupId>
-				<artifactId>geronimo-jta_1.1_spec</artifactId>
-				<version>1.1.1</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.hibernate.common/hibernate-commons-annotations -->
-			<dependency>
-				<groupId>org.hibernate.common</groupId>
-				<artifactId>hibernate-commons-annotations</artifactId>
-				<version>5.0.1.Final</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
-			<dependency>
-				<groupId>org.hibernate</groupId>
-				<artifactId>hibernate-core</artifactId>
-				<version>5.2.10.Final</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
-			<dependency>
-				<groupId>org.hibernate.javax.persistence</groupId>
-				<artifactId>hibernate-jpa-2.1-api</artifactId>
-				<version>1.0.0.Final</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore -->
-			<dependency>
-				<groupId>org.apache.httpcomponents</groupId>
-				<artifactId>httpcore</artifactId>
-				<version>4.4.6</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore-nio -->
-			<dependency>
-				<groupId>org.apache.httpcomponents</groupId>
-				<artifactId>httpcore-nio</artifactId>
-				<version>4.4.6</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/itext/itext -->
-			<dependency>
-				<groupId>itext</groupId>
-				<artifactId>itext</artifactId>
-				<version>4.2.1</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/net.sourceforge.jadex/jadex-xml -->
-			<dependency>
-				<groupId>net.sourceforge.jadex</groupId>
-				<artifactId>jadex-xml</artifactId>
-				<version>2.4</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
-			<dependency>
-				<groupId>org.javassist</groupId>
-				<artifactId>javassist</artifactId>
-				<version>3.22.0-CR2</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
-			<dependency>
-				<groupId>javax.inject</groupId>
-				<artifactId>javax.inject</artifactId>
-				<version>1</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
-			<dependency>
-				<groupId>javax.servlet</groupId>
-				<artifactId>javax.servlet-api</artifactId>
-				<version>4.0.0</version>
-				<scope>provided</scope>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
-			<dependency>
-				<groupId>javax.servlet</groupId>
-				<artifactId>jstl</artifactId>
-				<version>1.2</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/javax.servlet/jsp-api -->
-			<dependency>
-				<groupId>javax.servlet</groupId>
-				<artifactId>jsp-api</artifactId>
-				<version>2.0</version>
-				<scope>provided</scope>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.jdom/jaxen-core -->
-			<dependency>
-				<groupId>org.jdom</groupId>
-				<artifactId>jaxen-core</artifactId>
-				<version>1.0-FCS</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.jdom/jaxen-jdom -->
-			<dependency>
-				<groupId>org.jdom</groupId>
-				<artifactId>jaxen-jdom</artifactId>
-				<version>1.0-FCS</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.jboss.spec.javax.interceptor/jboss-interceptors-api_1.1_spec -->
-			<dependency>
-				<groupId>org.jboss.spec.javax.interceptor</groupId>
-				<artifactId>jboss-interceptors-api_1.1_spec</artifactId>
-				<version>1.0.1.Final</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.jboss.logging/jboss-logging -->
-			<dependency>
-				<groupId>org.jboss.logging</groupId>
-				<artifactId>jboss-logging</artifactId>
-				<version>3.3.1.Final</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.jfree/jcommon -->
-			<dependency>
-				<groupId>org.jfree</groupId>
-				<artifactId>jcommon</artifactId>
-				<version>1.0.24</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.jdom/jdom -->
-			<dependency>
-				<groupId>org.jdom</groupId>
-				<artifactId>jdom</artifactId>
-				<version>2.0.2</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/net.htmlparser.jericho/jericho-html -->
-			<dependency>
-				<groupId>net.htmlparser.jericho</groupId>
-				<artifactId>jericho-html</artifactId>
-				<version>3.4</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.codehaus.jettison/jettison -->
-			<dependency>
-				<groupId>org.codehaus.jettison</groupId>
-				<artifactId>jettison</artifactId>
-				<version>1.3.8</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.jfree/jfreechart -->
-			<dependency>
-				<groupId>org.jfree</groupId>
-				<artifactId>jfreechart</artifactId>
-				<version>1.0.19</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
-			<dependency>
-				<groupId>joda-time</groupId>
-				<artifactId>joda-time</artifactId>
-				<version>2.9.9</version>
-			</dependency>
-
-			<!-- https://mvnrepository.com/artifact/javax.annotation/jsr250-api -->
-			<dependency>
-				<groupId>javax.annotation</groupId>
-				<artifactId>jsr250-api</artifactId>
-				<version>1.0</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/net.sf.jt400/jt400 -->
-			<dependency>
-				<groupId>net.sf.jt400</groupId>
-				<artifactId>jt400</artifactId>
-				<version>9.3</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/log4j/log4j -->
-			<dependency>
-				<groupId>log4j</groupId>
-				<artifactId>log4j</artifactId>
-				<version>1.2.17</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
-			<dependency>
-				<groupId>org.mockito</groupId>
-				<artifactId>mockito-all</artifactId>
-				<version>2.0.2-beta</version>
-				<scope>test</scope>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/io.netty/netty -->
-			<dependency>
-				<groupId>io.netty</groupId>
-				<artifactId>netty</artifactId>
-				<version>4.0.0.Alpha8</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
-			<dependency>
-				<groupId>com.opencsv</groupId>
-				<artifactId>opencsv</artifactId>
-				<version>4.0</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/com.sun.pdfview/pdfrenderer -->
-			<dependency>
-				<groupId>com.sun.pdfview</groupId>
-				<artifactId>pdfrenderer</artifactId>
-				<version>0.9.1-patched</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
-			<dependency>
-				<groupId>org.apache.poi</groupId>
-				<artifactId>poi</artifactId>
-				<version>3.17-beta1</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-contrib -->
-			<dependency>
-				<groupId>org.apache.poi</groupId>
-				<artifactId>poi-contrib</artifactId>
-				<version>3.7-beta3</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
-			<dependency>
-				<groupId>org.apache.poi</groupId>
-				<artifactId>poi-ooxml</artifactId>
-				<version>3.17-beta1</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas -->
-			<dependency>
-				<groupId>org.apache.poi</groupId>
-				<artifactId>poi-ooxml-schemas</artifactId>
-				<version>3.17-beta1</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-scratchpad -->
-			<dependency>
-				<groupId>org.apache.poi</groupId>
-				<artifactId>poi-scratchpad</artifactId>
-				<version>3.17-beta1</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.jdom/saxpath -->
-			<dependency>
-				<groupId>org.jdom</groupId>
-				<artifactId>saxpath</artifactId>
-				<version>1.0-FCS</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/xalan/serializer -->
-			<dependency>
-				<groupId>xalan</groupId>
-				<artifactId>serializer</artifactId>
-				<version>2.7.2</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/net.spy/spymemcached -->
-			<dependency>
-				<groupId>net.spy</groupId>
-				<artifactId>spymemcached</artifactId>
-				<version>2.12.3</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/xml-apis/xml-apis -->
-			<dependency>
-				<groupId>xml-apis</groupId>
-				<artifactId>xml-apis</artifactId>
-				<version>xerces-2.7.1</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/com.github.cloudecho/xmlbean -->
-			<dependency>
-				<groupId>com.github.cloudecho</groupId>
-				<artifactId>xmlbean</artifactId>
-				<version>1.5.5</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
-			<dependency>
-				<groupId>com.fasterxml.jackson.core</groupId>
-				<artifactId>jackson-core</artifactId>
-				<version>2.9.1</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
-			<dependency>
-				<groupId>com.fasterxml.jackson.core</groupId>
-				<artifactId>jackson-databind</artifactId>
-				<version>2.9.5</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson/jackson-datatype-guava -->
-			<dependency>
-				<groupId>com.fasterxml.jackson</groupId>
-				<artifactId>jackson-datatype-guava</artifactId>
-				<version>1.9.2</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson/jackson-datatype-json-org -->
-			<dependency>
-				<groupId>com.fasterxml.jackson</groupId>
-				<artifactId>jackson-datatype-json-org</artifactId>
-				<version>1.8.0</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson/jackson-module-afterburner -->
-			<dependency>
-				<groupId>com.fasterxml.jackson</groupId>
-				<artifactId>jackson-module-afterburner</artifactId>
-				<version>0.7.1</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson/jackson-dataformat-csv -->
-			<dependency>
-				<groupId>com.fasterxml.jackson</groupId>
-				<artifactId>jackson-dataformat-csv</artifactId>
-				<version>0.5.0</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 </project>
