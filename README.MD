@@ -10,6 +10,7 @@ JSON, XML and SQL formatters has been taken bunch of similar data as input and i
 
 Project Home page look a like,
 
+![OnlineFormatter Home Page](https://github.com/Nallamachu/OnlineFormatter/blob/master/online%20formatter%20home%20page.JPG)
 
 **Configuration:**
 
@@ -22,10 +23,13 @@ Download the source code and build the war file or download the readily availabl
       <max-file-size>72428800</max-file-size>
       <max-request-size>72428800</max-request-size>
       <file-size-threshold>0</file-size-threshold>
-    </multipart-config>```
+    </multipart-config>
+    ```
 2. Temporarly uploaded log files will be store in the below path based on running OS,
-    For Windows: C:\Users\USER\Documents\logger\input\data
-    For UNIX/LINUX: /home/user/logger/input/data
+    
+    **For Windows: C:\Users\USER\Documents\logger\input\data
+    
+    **For UNIX/LINUX: /home/user/logger/input/data
     
     if that directory path is not available, please create the same to avoid the issues. Otherwise, you can also specify your own path in application web.xml prior to building war file.
 
